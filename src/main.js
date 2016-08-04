@@ -21,4 +21,6 @@ export class Hello extends React.Component {
 }
 */
 
-import React, { PropTypes } from 'react';
+export const Hello = ({name}) => (
+	<div>{`Hi ${name}`}</div>
+);

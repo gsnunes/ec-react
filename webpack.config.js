@@ -14,12 +14,4 @@ module.exports = {
     filename: 'bundle.js',
     libraryTarget: 'umd',
   },
-  externals: {
-    react: {
-      root: 'React',
-      commonjs2: 'react',
-      commonjs: 'react',
-      umd: 'react',
-    },
-  },
 };

@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"));
+		module.exports = factory(require("react"), require("react-dom"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = typeof exports === 'object' ? factory(require("react")) : factory(root["React"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__) {
+		define("libs", [, ], factory);
+	else if(typeof exports === 'object')
+		exports["libs"] = factory(require("react"), require("react-dom"));
+	else
+		root["libs"] = factory(root["React"], root["ReactDOM"]);
+})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -56,17 +56,64 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.Hello = undefined;
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(2);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/*
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+
+	export class Hello extends React.Component {
+	 render() {
+	  return <div>Hello {this.props.name}</div>;
+	 }
+	}
+
+	ReactDOM.render(<Hello />, document.getElementById('example'));
+	*/
+
+	/*
+	import React from 'react';
+
+	export class Hello extends React.Component {
+	  render() {
+	    return <div>Hello {this.props.name}</div>;
+	  }
+	}
+	*/
+
+	var Hello = exports.Hello = function Hello(_ref) {
+	  var name = _ref.name;
+	  return _react2.default.createElement(
+	    'div',
+	    null,
+	    'Hi ' + name
+	  );
+	};
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
 	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ }
 /******/ ])
