@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   module: {
     loaders: [{
@@ -13,5 +15,9 @@ module.exports = {
     path: './dist',
     filename: 'bundle.js',
     libraryTarget: 'umd',
+  },
+  externals: {
+    "react": "React",
+    "react-dom": "ReactDOM",
   },
 };

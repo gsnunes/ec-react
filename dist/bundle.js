@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("react"), require("react-dom"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("libs", [, ], factory);
-	else if(typeof exports === 'object')
-		exports["libs"] = factory(require("react"), require("react-dom"));
-	else
-		root["libs"] = factory(root["React"], root["ReactDOM"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_1__, __WEBPACK_EXTERNAL_MODULE_2__) {
+		define([], factory);
+	else {
+		var a = factory();
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,26 +52,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+		value: true
 	});
-	exports.Hello = undefined;
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactDom = __webpack_require__(2);
-
-	var _reactDom2 = _interopRequireDefault(_reactDom);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 	/*
+	// Example 1
 	import React from 'react';
 	import ReactDOM from 'react-dom';
 
@@ -81,10 +70,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	 }
 	}
 
-	ReactDOM.render(<Hello />, document.getElementById('example'));
+	ReactDOM.render(<Hello />, document.getElementById('content'));
 	*/
 
 	/*
+	// Example 2
 	import React from 'react';
 
 	export class Hello extends React.Component {
@@ -94,26 +84,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 	*/
 
+	/*
+	// Example 3
+	export const Hello = ({name}) => (
+		<div>{`Hi ${name}`}</div>
+	);
+	*/
+
+	// Example 4
 	var Hello = exports.Hello = function Hello(_ref) {
-	  var name = _ref.name;
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    'Hi ' + name
-	  );
+		var name = _ref.name;
+
+		var sayHi = function sayHi(event) {
+			alert("Hi " + name);
+		};
+
+		return React.createElement(
+			"div",
+			null,
+			React.createElement(
+				"a",
+				{ href: "#", onClick: sayHi },
+				"Say Hi"
+			)
+		);
 	};
-
-/***/ },
-/* 1 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
-
-/***/ },
-/* 2 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
 
 /***/ }
 /******/ ])
