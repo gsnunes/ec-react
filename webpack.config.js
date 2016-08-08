@@ -1,23 +1,24 @@
 const path = require('path');
 
 module.exports = {
-  module: {
-    loaders: [{
-      loader: 'babel-loader',
-      exclude: /(node_modules|bower_components)/,
-      query: {
-        presets: ['react', 'es2015'],
-      },
-    }],
-  },
-  entry: './src/main.js',
+  entry: [
+    './main',
+  ],
   output: {
-    path: './dist',
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     libraryTarget: 'umd',
   },
   externals: {
-    "react": "React",
-    "react-dom": "ReactDOM",
+    react: 'React',
+    'react-dom': 'ReactDOM',
+  },
+  module: {
+    loaders: [{
+      test: /\.js$/,
+      loaders: ['babel'],
+      include: path.join(__dirname, 'src'),
+      exclude: /(node_modules|bower_components)/,
+    }],
   },
 };

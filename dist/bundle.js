@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
+		module.exports = factory(require("React"));
 	else if(typeof define === 'function' && define.amd)
-		define([], factory);
+		define(["React"], factory);
 	else {
-		var a = factory();
+		var a = typeof exports === 'object' ? factory(require("React")) : factory(root["React"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function() {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -52,63 +52,113 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(1);
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	//const req = require.context('./src/', true, /\.js$/);
+	//req.keys().forEach(req);
+
+	__webpack_require__(2);
+	__webpack_require__(5);
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Hello"] = __webpack_require__(3);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	/*
-	// Example 1
-	import React from 'react';
-	import ReactDOM from 'react-dom';
+	var _react = __webpack_require__(4);
 
-	export class Hello extends React.Component {
-	 render() {
-	  return <div>Hello {this.props.name}</div>;
-	 }
-	}
+	var _react2 = _interopRequireDefault(_react);
 
-	ReactDOM.render(<Hello />, document.getElementById('content'));
-	*/
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	/*
-	// Example 2
-	import React from 'react';
+	var Hello = function Hello(_ref) {
+	  var name = _ref.name;
 
-	export class Hello extends React.Component {
-	  render() {
-	    return <div>Hello {this.props.name}</div>;
-	  }
-	}
-	*/
+	  var sayHi = function sayHi() {
+	    console.log("Hi " + name);
+	  };
 
-	/*
-	// Example 3
-	export const Hello = ({name}) => (
-		<div>{`Hi ${name}`}</div>
-	);
-	*/
-
-	// Example 4
-	var Hello = exports.Hello = function Hello(_ref) {
-		var name = _ref.name;
-
-		var sayHi = function sayHi(event) {
-			alert("Hi " + name);
-		};
-
-		return React.createElement(
-			"div",
-			null,
-			React.createElement(
-				"a",
-				{ href: "#", onClick: sayHi },
-				"Say Hi"
-			)
-		);
+	  return _react2.default.createElement(
+	    "div",
+	    null,
+	    _react2.default.createElement(
+	      "a",
+	      { href: "#", onClick: sayHi },
+	      "Say Hello to"
+	    )
+	  );
 	};
+
+	Hello.propTypes = {
+	  name: _react2.default.PropTypes.string.isRequired
+	};
+
+	module.exports = Hello;
+
+/***/ },
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Hello2"] = __webpack_require__(6);
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Hello2 = function Hello2(_ref) {
+	  var name = _ref.name;
+
+	  var sayHi = function sayHi() {
+	    console.log("Hi " + name);
+	  };
+
+	  return _react2.default.createElement(
+	    "div",
+	    null,
+	    _react2.default.createElement(
+	      "a",
+	      { href: "#", onClick: sayHi },
+	      "Say Hello2 to"
+	    )
+	  );
+	};
+
+	Hello2.propTypes = {
+	  name: _react2.default.PropTypes.string.isRequired
+	};
+
+	module.exports = Hello2;
 
 /***/ }
 /******/ ])
