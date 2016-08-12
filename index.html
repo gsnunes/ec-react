@@ -29,6 +29,9 @@
     <script src="/dist/bundle.js"></script>
 
     <script>
+      var Hello = require('/src/Hello.js'),
+          Hello2 = require('/src/Hello2.js');
+
       ReactDOM.render(
         React.createElement(Hello, {name: "World"}),
         document.getElementById('content')

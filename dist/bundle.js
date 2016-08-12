@@ -1,166 +1,55 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"));
-	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
-	else {
-		var a = typeof exports === 'object' ? factory(require("React")) : factory(root["React"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
+require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({"/src/Hello.js":[function(require,module,exports){
+"use strict";
 
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
+var Hello = function Hello(_ref) {
+  var name = _ref.name;
 
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
+  var sayHi = function sayHi() {
+    console.log("Hi " + name);
+  };
 
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			exports: {},
-/******/ 			id: moduleId,
-/******/ 			loaded: false
-/******/ 		};
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "a",
+      { href: "#", onClick: sayHi },
+      "Say Hello 1"
+    )
+  );
+};
 
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+Hello.propTypes = {
+  name: React.PropTypes.string.isRequired
+};
 
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
+module.exports = Hello;
 
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
+},{}],"/src/Hello2.js":[function(require,module,exports){
+"use strict";
 
+var Hello2 = function Hello2(_ref) {
+  var name = _ref.name;
 
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
+  var sayHi = function sayHi() {
+    console.log("Hi " + name);
+  };
 
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "a",
+      { href: "#", onClick: sayHi },
+      "Say Hello 2"
+    )
+  );
+};
 
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+Hello2.propTypes = {
+  name: React.PropTypes.string.isRequired
+};
 
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(0);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports, __webpack_require__) {
+module.exports = Hello2;
 
-	module.exports = __webpack_require__(1);
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-	//const req = require.context('./src/', true, /\.js$/);
-	//req.keys().forEach(req);
-
-	__webpack_require__(2);
-	__webpack_require__(5);
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Hello"] = __webpack_require__(3);
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Hello = function Hello(_ref) {
-	  var name = _ref.name;
-
-	  var sayHi = function sayHi() {
-	    console.log("Hi " + name);
-	  };
-
-	  return _react2.default.createElement(
-	    "div",
-	    null,
-	    _react2.default.createElement(
-	      "a",
-	      { href: "#", onClick: sayHi },
-	      "Say Hello to"
-	    )
-	  );
-	};
-
-	Hello.propTypes = {
-	  name: _react2.default.PropTypes.string.isRequired
-	};
-
-	module.exports = Hello;
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_4__;
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["Hello2"] = __webpack_require__(6);
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Hello2 = function Hello2(_ref) {
-	  var name = _ref.name;
-
-	  var sayHi = function sayHi() {
-	    console.log("Hi " + name);
-	  };
-
-	  return _react2.default.createElement(
-	    "div",
-	    null,
-	    _react2.default.createElement(
-	      "a",
-	      { href: "#", onClick: sayHi },
-	      "Say Hello2 to"
-	    )
-	  );
-	};
-
-	Hello2.propTypes = {
-	  name: _react2.default.PropTypes.string.isRequired
-	};
-
-	module.exports = Hello2;
-
-/***/ }
-/******/ ])
-});
-;
+},{}]},{},[]);

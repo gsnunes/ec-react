@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Hello = ({ name }) => {
   const sayHi = () => {
     console.log(`Hi ${name}`);
@@ -7,7 +5,7 @@ const Hello = ({ name }) => {
 
   return (
     <div>
-      <a href="#" onClick={sayHi}>Say Hello to</a>
+      <a href="#" onClick={sayHi}>Say Hello 1</a>
     </div>
   );
 };
