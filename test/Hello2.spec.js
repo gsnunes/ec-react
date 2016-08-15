@@ -1,5 +1,3 @@
-const Hello = require('../src/Hello');
-
 describe('example test', () => {
   it('should be fail', () => {
     /* eslint-disable no-unused-expressions */

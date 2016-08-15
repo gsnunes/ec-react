@@ -21,6 +21,7 @@
   <body>
     <div id="content"></div>
     <div id="content2"></div>
+    <div id="link"></div>
 
 
     <script src="bower_components/react/react.js"></script>
@@ -30,7 +31,8 @@
 
     <script>
       var Hello = require('/src/Hello.js'),
-          Hello2 = require('/src/Hello2.js');
+          Hello2 = require('/src/Hello2.js'),
+          Link = require('/src/Link.js');
 
       ReactDOM.render(
         React.createElement(Hello, {name: "World"}),
@@ -40,6 +42,11 @@
       ReactDOM.render(
         React.createElement(Hello2, {name: "World"}),
         document.getElementById('content2')
+      );
+
+      ReactDOM.render(
+        React.createElement(Link, {page: 'http://www.facebook.com'}, 'test'),
+        document.getElementById('link')
       );
     </script>
   </body>
