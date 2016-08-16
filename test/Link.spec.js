@@ -8,5 +8,10 @@ describe('Link', () => {
 
     const result = shallowRenderer.getRenderOutput();
     expect(result.type).equal('a');
+
+    result.props.onMouseEnter();
+    result.props.onMouseLeave();
+
+    shallowRenderer.render(React.createElement(Link, {}, 'some child text'));
   });
 });

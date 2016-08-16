@@ -89,13 +89,11 @@ var Link = function (_React$Component) {
     key: 'onMouseEnter',
     value: function onMouseEnter() {
       this.setState({ class: STATUS.HOVERED });
-      console.log(this.state);
     }
   }, {
     key: 'onMouseLeave',
     value: function onMouseLeave() {
       this.setState({ class: STATUS.NORMAL });
-      console.log(this.state);
     }
   }, {
     key: 'render',
@@ -117,7 +115,7 @@ var Link = function (_React$Component) {
 }(React.Component);
 
 Link.propTypes = {
-  page: React.PropTypes.string.isRequired,
+  page: React.PropTypes.string,
   children: React.PropTypes.string.isRequired
 };
 

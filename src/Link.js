@@ -18,12 +18,10 @@ class Link extends React.Component {
 
   onMouseEnter() {
     this.setState({ class: STATUS.HOVERED });
-    console.log(this.state);
   }
 
   onMouseLeave() {
     this.setState({ class: STATUS.NORMAL });
-    console.log(this.state);
   }
 
   render() {
@@ -42,7 +40,7 @@ class Link extends React.Component {
 }
 
 Link.propTypes = {
-  page: React.PropTypes.string.isRequired,
+  page: React.PropTypes.string,
   children: React.PropTypes.string.isRequired,
 };
 

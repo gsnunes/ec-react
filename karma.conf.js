@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Fri Aug 12 2016 16:34:51 GMT-0300 (BRT)
 
+const istanbul = require('browserify-babel-istanbul');
+
 module.exports = (config) => {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -15,7 +17,7 @@ module.exports = (config) => {
     // list of files / patterns to load in the browser
     files: [
       './bower_components/react/react.js',
-      './dist/bundle.js',
+      './src/**/*.js',
       './test/**/*.spec.js',
     ],
 
@@ -28,20 +30,21 @@ module.exports = (config) => {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      './src/**/*.js': ['browserify'],
       './test/**/*.spec.js': ['browserify'],
     },
 
 
     browserify: {
       debug: true,
-      transform: ['babelify'],
+      transform: [['babelify', { plugins: [['__coverage__', { ignore: './test' }]] }], istanbul],
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
 
 
     // web server port
