@@ -51,10 +51,12 @@ function buildScript(watch, files) {
 }
 
 
-gulp.task('scripts', () => {
+gulp.task('build', () => {
   getFiles(false, buildScript);
 });
 
-gulp.task('default', ['scripts'], () => {
+gulp.task('watch', ['build'], () => {
   getFiles(true, buildScript);
 });
+
+gulp.task('default', ['watch']);

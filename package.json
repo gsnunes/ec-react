@@ -51,6 +51,8 @@
     }
   },
   "scripts": {
-    "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js",
+    "build": "gulp build",
+    "watch": "gulp watch"
   }
 }
